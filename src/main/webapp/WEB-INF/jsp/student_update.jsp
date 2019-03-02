@@ -135,7 +135,6 @@
             </tr>
         </table>
     </form>
-    ${student.hobby}
 
 </div>
 
