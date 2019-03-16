@@ -16,7 +16,9 @@ import top.wanmudong.student.service.IStudentService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Time;
 import java.util.List;
+import java.util.Timer;
 
 /**
  * <p>
@@ -42,27 +44,27 @@ public class StudentController {
         model.addAttribute("name","sissy");
         return "student_delete";
     }
-    @PostMapping("/del/{id}")
+    @GetMapping("/del/{id}")
     public String del(@PathVariable int id, Model model,HttpServletResponse response) throws IOException {
         iStudentService.deleteById(id);
         response.sendRedirect("/students/");
         return "index";
     }
 
-    @GetMapping("/del/{id}")
-    public String goDel(@PathVariable int id, Model model){
-        Student student = iStudentService.selectById(id);
-
-        student.setCollege(iCollegeService.selectById(student.getCollegeId()).getCollegeName());
-        student.setMajor(iMajorService.selectById(student.getMajorId()).getMajorName());
-
-        model.addAttribute("student",student);
-
-        List<College> listCollege = iCollegeService.selectList(new EntityWrapper<College>());
-        model.addAttribute("listCollege",listCollege);
-
-        return "student_delete";
-    }
+//    @GetMapping("/del/{id}")
+//    public String goDel(@PathVariable int id, Model model){
+//        Student student = iStudentService.selectById(id);
+//
+//        student.setCollege(iCollegeService.selectById(student.getCollegeId()).getCollegeName());
+//        student.setMajor(iMajorService.selectById(student.getMajorId()).getMajorName());
+//
+//        model.addAttribute("student",student);
+//
+//        List<College> listCollege = iCollegeService.selectList(new EntityWrapper<College>());
+//        model.addAttribute("listCollege",listCollege);
+//
+//        return "student_delete";
+//    }
 
     @GetMapping("/")
     public String get(Model model){

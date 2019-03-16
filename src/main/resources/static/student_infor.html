@@ -1,0 +1,106 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style type="text/css">
+    body{
+      background-color: #F0F8FF;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="shr" align="center" style="margin-top:50">
+    <div style="font-size:24"> 输入学生信息 </div>
+    <form id="myform" action="jsp/student_add.jsp" method="post">
+      <table border="1" cellspacing="0" frame="box" rules="all">
+        <tr style="height: 35px;">
+          <td style="width:80px"> 姓名：</td>
+          <td>
+            <input type="text" name="xming" style="font-size:20; border-style: none" />
+          </td>
+        </tr>
+        <tr style="height: 35px;">
+          <td style="width:80px"> 年龄：</td>
+          <td>
+            <input type="text" name="nling" style="font-size:20; border-style: none" />
+          </td>
+        </tr>
+        <tr style="height: 35px;">
+          <td style="width:80px"> 性别：</td>
+          <td>
+            <input style=" font-size:24" type="radio" name="xbie" value="男" />男
+            <input style=" font-size:24" type="radio" name="xbie" value="女" />女
+          </td>
+        </tr>
+        <tr style="height: 35px;">
+          <td style="width:80px"> 爱好：</td>
+          <td>
+            <input style=" font-size:24" type="checkbox" name="aih" />美食
+            <input style=" font-size:24" type="checkbox" name="aih" />音乐
+            <input style=" font-size:24" type="checkbox" name="aih" />旅游
+            <input style=" font-size:24" type="checkbox" name="aih" />游戏
+          </td>
+        </tr>
+        <tr style="height: 35px;">
+          <td style="width:80px"> 学院：</td>
+          <td>
+            <select name="xyuan" style="font-size:18">
+              <option value="管理学院">管理学院</option>
+              <option value="计算机学院">计算机学院</option>
+            </select>
+          </td>
+        </tr>
+        <tr style="height: 35px;">
+          <td style="width:80px"> 专业：</td>
+          <td>
+            <select name="zhye" style="font-size:18">
+              <option value="信息管理与信息系统">信息管理与信息系统</option>
+              <option value="电子商务">电子商务</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <tr>
+          <td>
+            <input type="submit" name="add" value="添加学生信息"> </td>
+          <td>
+            <input type="reset" name="reset" value="重置" style="width:100"> </td>
+        </tr>
+      </table>
+    </form>
+
+  </div>
+  <div id="llan" align="center">
+    <div style="font-size:24"> 学生信息浏览 </div>
+    <table  border="1" cellspacing="0" frame="box" rules="all">
+      <tr align="center">
+        <th style="width:100">姓名</th>
+        <th style="width:100">年龄</th>
+        <th style="width:100">性别</th>
+        <th style="width:100">爱好</th>
+        <th style="width:200">学院</th>
+        <th style="width:200">专业</th>
+        <th style="width:100">修改与删除</th>
+      </tr>
+      <tr align="center">
+        <td>张三</td>
+        <td>18</td>
+        <td>男</td>
+        <td>美食,游戏</td>
+        <td>管理学院</td>
+        <td>信息管理与信息系统</td>
+        <td>
+          <input type="button" name="update" value="修改">
+          <input type="button" name="delete" value="删除">
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <style type="text/css">
+    body{
+      background-color: #F0F8FF;
+    }
+  </style>
+    <style>
+        .center{
+            margin:1%;
+            text-align:center;
+        }
+        .table-striped > tbody > tr:nth-child(2n+1) > td,
+        .table-striped > tbody > tr:nth-child(2n+1) > th {
+            background-color: rgb(217, 237, 247);
+        }
+        .col-center-block {
+            float: none;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        form{
+            margin-top: 100px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="/bootstrap.min.css" type="text/css" />
+
+</head>
+
+<body>
+<div class="col-xs-6 col-md-4 col-center-block">
+    <h1  style="font-family: '造字工房悦圆演示版'">输入学生信息<small>Student Information </small></h1>
+    <form  id="myform"  class="form-horizontal" action="/students/add" method="post" accept-charset="UTF-8">
+
+        <div class="form-group">
+            <label for="deliveryOrder" class="col-sm-3 control-label"  style="font-family: '造字工房悦圆演示版'">姓名：</label>
+            <div class="col-sm-9">
+                <input name="name" id="deliveryOrder" type="text" class="form-control" placeholder="例如：林思意">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="money"  class="col-sm-3 control-label"  style="font-family: '造字工房悦圆演示版'">年龄：</label>
+            <div class="col-sm-9">
+                <input name="age" id="money" type="text" class="form-control" placeholder="例如：23">
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label   class="col-sm-3 control-label"  style="font-family: '造字工房悦圆演示版'">性别：</label>
+            <div   class="col-sm-9" >
+                <label  class="radio-inline">
+                    <input type="radio" name="sex" id="optionsRadios1" value="男" >
+                    男
+                </label>
+                <label  class="radio-inline">
+                    <input type="radio" name="sex" id="optionsRadios2" value="女">
+                    女
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="hobby"  class="col-sm-3 control-label"  style="font-family: '造字工房悦圆演示版'">爱好：</label>
+            <div name="hobby" class="col-sm-9">
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="1" value="体育" name="hobby"> 体育
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="2" value="音乐"name="hobby"> 音乐
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="3" value="旅游" name="hobby"> 旅游
+                </label>
+                <label class="checkbox-inline">
+                    <input  type="checkbox"  value="游戏" name="hobby"/>游戏
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="college"  class="col-sm-3 control-label"  style="font-family: '造字工房悦圆演示版'">学院：</label>
+            <div class="col-sm-9">
+                <select id="college" name="collegeId" style="font-size:24" onchange="college_major()">
+                    <option value="--------">--------</option>
+                    <c:forEach items="${listCollege}" var="college">
+                        <option value="${college.id}" >${college.collegeName}</option>
+                    </c:forEach>
+
+                </select>
+            </div>
+        </div>
+        <div class="form-group"    >
+            <label for="college"  class="col-sm-3 control-label"  style="font-family: '造字工房悦圆演示版'">专业：</label>
+            <div class="col-sm-9"   >
+                <select id="major" name="majorId" style="font-size:24">
+                    <option value="--------">--------</option>
+
+                </select>
+            </div>
+        </div>
+        <%--<button type="submit" class="btn btn-default">Submit</button>--%>
+        <%--<input type="submit" name="add" value="添加学生信息"> </td>--%>
+        <%--<input type="reset" name="reset" value="重置" style="width:100"> </td>--%>
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">提交</button>
+                <a class="btn btn-default" type="reset" name="reset" role="button">重置</a>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+</body>
+
+</html>
