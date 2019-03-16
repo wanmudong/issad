@@ -113,6 +113,23 @@
                  document.getElementById("myform").reset();
          }
     </script>
+    <script>
+
+        function del()
+        {
+            if(confirm("确定要删除吗？"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+    </script>
+
 </head>
 <body>
 <div class="col-xs-6 col-md-4 col-center-block">
@@ -351,7 +368,7 @@
                 <td><a href="update/${student.id}">修改</a>
                     <%--<td><a href="javascript:if(confirm('确实要删除吗?'))/demo/MaterialCl?type=delete&id=${ material.deliveryOrder}">删除</a></td>--%>
 
-                <a href="/students/del/${student.id}">删除</a></td>
+                <a href="/students/del/${student.id}" onclick="return del()"; >删除</a></td>
             </tr>
         </c:forEach>
     </table>

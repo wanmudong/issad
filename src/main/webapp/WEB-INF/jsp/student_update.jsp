@@ -225,6 +225,7 @@
             <div class="col-sm-offset-2 col-sm-10">
                 <input type="hidden" name="id" value="${student.id}">
                 <button type="submit" name="add" class="btn btn-primary">提交</button>
+                <a  class="btn btn-default" href="/students/" >返回</a>
             </div>
         </div>
 
